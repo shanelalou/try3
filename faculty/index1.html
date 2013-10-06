@@ -1,0 +1,79 @@
+<?php include '../config.php';?>
+
+<!DOCTYPE HTML>
+<html>
+<head>
+
+	<title>faculty</title>
+	<link rel="icon" type="image/png" href="../source/images/icon.png">
+	<link rel="stylesheet" type="text/css" href="../source/styles/style.css">
+	<link rel="stylesheet" type="text/css" href="../source/styles/ui-lightness/jquery-ui-1.8.23.custom.css">
+	<style>
+		* {
+			font-size:14px;
+		}
+	</style>
+	<script type="text/javascript" src="../source/scripts/js.js"></script>
+	<script type="text/javascript" src="../source/scripts/ui.js"></script>
+	<script>
+		$('#login').click(function(){
+		$.ajax({
+			url:"functions/login.php",
+			data:{
+				username:$('#username').val(),
+				password:$('#password').val()
+			},
+			success:function(i){
+				if($('#username').val()==""){
+					$('.login-error').html('Please enter your username.');
+				}else if($('#password').val()==""){
+					$('.login-error').html('Please enter your password.');
+				}else if(i==1){
+					window.location="class";
+				}else if(i==3){
+					$('.login-error').html('The password you entered is incorrect.');
+			
+				}else{
+					$('.login-error').html('Invalid login.');
+				}
+			}
+		});
+	});
+	</script>
+</head>
+<body style= "background: transparent url(../images/bg.png); background-repeat: no-repeat;">
+	
+			<div>
+			<img style="margin-left:80px;" src="../images/capss.png"/>
+			
+					<div style="margin-left:270px; margin-top:50px;font-size:40px;color:blue;font-family:Century Gothic;">
+					LOG-IN FORM</div>
+					
+				<div style="margin:auto;margin-top:50px;">
+					<div class="login-error" style="color:red;font-size:20px;"></div>
+				</div>
+				
+				<div style="margin:auto;margin-top:30px;" >
+					<span class="inline" style="width:90px;font-size:37px;">Username: </span><input style="height:70px;width:480px;font-size:30px;" type="text" class="txt" id="username" placeholder="Enter your username">
+				</div>
+				
+				<div style="margin:auto;margin-top:30px;">
+					<span class="inline" style="width:90px;font-size:37px;">Password:</span> &nbsp;	 <input style="height:70px;width:480px;font-size:30px;" type="password" class="txt" id="password" placeholder="Enter your Password">
+				</div>
+				
+				<div style="margin-top:30px;">
+					<div style="margin-top:5px;">
+	<button style="height:70px;width:480px;margin-left:165px;font-size:30px;" id="login" >LOGIN</button><br>
+			<button style="height:70px;width:480px;margin-left:165px;font-size:30px;" ><a style=" text-decoration: none;" href="../index.html"> BACK PAGE </a> </button>
+		
+					</div>
+					
+				</div>
+			</div>
+			
+	
+	
+
+		
+</body>
+</html>

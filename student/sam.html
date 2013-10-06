@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Student</title>
+	<link rel="icon" type="image/png" href="../source/images/icon.png">
+	<link rel="stylesheet" type="text/css" href="../source/styles/style.css">
+	<link rel="stylesheet" type="text/css" href="../source/styles/absolution/absolution.css">
+	<style>
+		* {
+			font-size:14px;
+		}
+	</style>
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0b2/jquery.mobile-1.0b2.min.css" />
+	<script src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.0b2/jquery.mobile-1.0b2.min.js"></script>
+	<script type="text/javascript" src="functions/script.js"></script>
+	<script>
+		$(function(){
+			$('#forgotpass').click(function(){
+				a = prompt("Enter your Student Number.");
+				if(a!=""){
+					alert("Check your E-mail for your password.");
+				}
+				
+			});
+		});
+	</script>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+	<div>
+		<div>		
+			<div id="login-form"  >
+				
+				<div>
+					<div style="padding:8px 0px 0px 10px;color:BLACK;text-shadow:1px 1px 2px black;">LOG-IN FORM</div>
+				</div>
+				<div >
+					<div class="login-error" style="color:red;"></div>
+				</div>
+				
+				<div >
+					<span class="inline" style="width:90px;">Username: </span><input type="text" class="txt" id="username" maxlength="9" placeholder="Enter your Student Number">
+				</div>
+				
+				<div >
+					<span class="inline" style="width:90px;">Password: 	</span><input type="password" class="txt" id="password" placeholder="Enter your Password">
+				</div>
+				
+				<div >
+					<div style="margin-top:5px;">
+						<span class="a" id="forgotpass">Forgot Password</span><button id="login" class="right" style="margin-right:-5px;width:120px;">Login</button>
+
+					</div>
+					
+				</div>
+			</div>
+			
+</body>
+</html>
